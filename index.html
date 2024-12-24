@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توثيق الدوال في JavaScript function</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            margin: 20px;
+            direction: rtl;
+            text-align: right;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .example {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .example:hover {
+            background-color: #f1f1f1;
+        }
+        .code {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        .test-section {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e9f7df;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+        }
+        .test-section p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>توثيق الدوال في JavaScript</h1>
+    <p>تحتوي هذه الصفحة على أمثلة تفاعلية لدوال JavaScript مع شرح بسيط لكل دالة. يمكنك تجربة الأمثلة واختبار فهمك بطريقة ممتعة.</p>
+
+    <div class="example">
+        <h2>دالة الترحيب</h2>
+        <p>هذه الدالة تعرض رسالة ترحيب باستخدام متغير ثابت.</p>
+        <div class="code">
+<pre>
+function hello() {
+    const name = 'hsoub';
+    console.log('مرحباً بالعالم ' + name);
+}
+</pre>
+        </div>
+        <button onclick="hello()">تشغيل المثال</button>
+        <div class="test-section">
+            <p><strong>اختبار:</strong> قم بتعديل الدالة لتعرض اسمك بدلاً من "hsoub".</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>تصفية المصفوفة</h2>
+        <p>تقوم هذه الدالة بتصفية عناصر المصفوفة حسب نوعها. في هذا المثال، تعرض القيم النصية فقط.</p>
+        <div class="code">
+<pre>
+function filterArray() {
+    const array = ['ahmed', 1, 'abd', 'ibrahim', 'somya', 123];
+    for (let item of array) {
+        if (typeof item === 'string') {
+            console.log(item);
+        }
+    }
+}
+</pre>
+        </div>
+        <button onclick="filterArray()">تشغيل المثال</button>
+        <div class="test-section">
+            <p><strong>اختبار:</strong> أضف عناصر جديدة إلى المصفوفة واختبر الدالة.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>دالة الترحيب مع وسيط</h2>
+        <p>تقبل هذه الدالة وسيطاً لإضافة الاسم إلى الرسالة الترحيبية.</p>
+        <div class="code">
+<pre>
+function hello(name) {
+    console.log('مرحباً بالعالم ' + name);
+}
+</pre>
+        </div>
+        <button onclick="hello('hsoub')">تشغيل المثال</button>
+        <div class="test-section">
+            <p><strong>اختبار:</strong> قم بتمرير أسماء مختلفة إلى الدالة.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>دالة الجمع</h2>
+        <p>تحسب هذه الدالة مجموع رقمين وتعرض النتيجة.</p>
+        <div class="code">
+<pre>
+function sum(x, y) {
+    console.log(x + y);
+}
+</pre>
+        </div>
+        <button onclick="sum(1, 2)">تشغيل المثال</button>
+        <div class="test-section">
+            <p><strong>اختبار:</strong> جرب تمرير قيم سالبة أو صفرية.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>دالة الجمع مع الإرجاع</h2>
+        <p>تُرجع هذه النسخة من دالة الجمع النتيجة بدلاً من عرضها.</p>
+        <div class="code">
+<pre>
+function sum(x, y) {
+    return x + y;
+}
+</pre>
+        </div>
+        <button onclick="console.log(sum(1, 2))">تشغيل المثال</button>
+        <div class="test-section">
+            <p><strong>اختبار:</strong> قم بتخزين القيمة المرجعة في متغير جديد واستخدامها.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>تصفية المصفوفة مع النوع</h2>
+        <p>تقوم هذه الدالة بتصفية عناصر المصفوفة بناءً على نوع محدد (مثل 'number').</p>
+        <div class="code">
+<pre>
+function filterArray(array, type) {
+    for (let item of array) {
+        if (typeof item === type) {
+            console.log(item);
+        }
+    }
+}
+</pre>
+        </div>
+        <button onclick="filterArray(['ahmed', 1, 'abd', 'ibrahim', 'somya', 123], 'number')">تشغيل المثال</button>
+        <div class="test-section">
+            <p><strong>اختبار:</strong> جرب تمرير أنواع بيانات مختلفة كمعامل.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>المعاملات الافتراضية</h2>
+        <p>توضح هذه الدالة كيفية استخدام المعاملات الافتراضية في JavaScript.</p>
+        <div class="code">
+<pre>
+function sum(x, y = 1) {
+    return x + y;
+}
+</pre>
+        </div>
+        <button onclick="console.log(sum(1))">تشغيل المثال</button>
+        <div class="test-section">
+            <p><strong>اختبار:</strong> جرب استدعاء الدالة بدون تمرير المعامل الثاني.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>استخدام الوسائط</h2>
+        <p>تحسب هذه الدالة مجموع جميع الوسائط المُمررة إليها.</p>
+        <div class="code">
+<pre>
+function sum() {
+    let total = 0;
+    for (let num of arguments) {
+        total = total + num;
+    }
+    return total;
+}
+</pre>
+        </div>
+        <button onclick="console.log(sum(1, 2, 5))">تشغيل المثال</button>
+        <div class="test-section">
+            <p><strong>اختبار:</strong> جرب تمرير عدد مختلف من الوسائط.</p>
+        </div>
+    </div>
+
+    <script>
+        function hello() {
+            const name = 'hsoub';
+            console.log('مرحباً بالعالم ' + name);
+        }
+
+        function filterArray(array, type) {
+            if (!array) {
+                array = ['ahmed', 1, 'abd', 'ibrahim', 'somya', 123];
+                type = 'string';
+            }
+            for (let item of array) {
+                if (typeof item === type) {
+                    console.log(item);
+                }
+            }
+        }
+
+        function sum(x, y = 1) {
+            return x + y;
+        }
+    </script>
+    <div class="example">
+        <h2>المتغيرات والفرق بين let و var</h2>
+        <p>يوضح هذا المثال الفرق بين <code>let</code> و <code>var</code> عند تعريف المتغيرات داخل الحلقات.</p>
+        <div class="code">
+<pre>
+function runLet() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+    }
+    // لا يمكن الوصول إلى i هنا عند استخدام let
+}
+
+function runVar() {
+    for (var i = 0; i < 5; i++) {
+        console.log(i);
+    }
+    console.log('آخر قيمة لـ i:', i); // يمكن الوصول إلى i هنا عند استخدام var
+}
+</pre>
+        </div>
+        <button onclick="runLet()">اختبار let</button>
+        <button onclick="runVar()">اختبار var</button>
+    </div>
+
+    <div class="example">
+        <h2>الأعداد الأولية</h2>
+        <p>يتم استخدام دالتين: واحدة للتحقق إذا كان العدد أوليًا، والأخرى لطباعة جميع الأعداد الأولية حتى قيمة معينة.</p>
+        <div class="code">
+<pre>
+function isPrime(num) {
+    if (num <= 1) return false;
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+
+function printPrimes(max) {
+    for (let i = 2; i < max; i++) {
+        if (isPrime(i)) console.log(i);
+    }
+}
+
+let maxNum = prompt('أدخل الرقم الأقصى:');
+if (maxNum) printPrimes(Number(maxNum));
+</pre>
+        </div>
+    </div>
+</body>
+</html>
