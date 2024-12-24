@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توثيق JavaScript - أمثلة تفاعلية</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+        h2 {
+            color: #007bff;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #output {
+            background: #e9ecef;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>توثيق JavaScript - أمثلة تفاعلية</h1>
+    </header>
+
+    <section>
+        <h2>حذف العناصر من المصفوفة</h2>
+        <p>يمكنك حذف العناصر من المصفوفة باستخدام عدة طرق مثل <code>pop</code> و <code>shift</code> و <code>splice</code>. انظر المثال التالي:</p>
+        <pre>
+let numb = [1, 2, 3, 4, 5];
+const last = numb.pop();
+console.log(last);
+console.log(numb);
+
+const first = numb.shift();
+console.log(first);
+console.log(numb);
+
+const middle = numb.splice(1, 2);
+console.log(middle);
+console.log(numb);
+        </pre>
+        <button onclick="runExample1()">جرب الكود</button>
+        <div id="output1"></div>
+    </section>
+
+    <section>
+        <h2>تفريغ المصفوفة</h2>
+        <p>لتفريغ المصفوفة بالكامل، يمكن استخدام عدة طرق مثل التعيين إلى مصفوفة جديدة أو تغيير الطول. المثال التالي يوضح ذلك:</p>
+        <pre>
+let langs = ['c++', 'php', 'js'];
+let clone = langs;
+langs = [];
+
+langs.length = 0;
+console.log(langs);
+console.log(clone);
+        </pre>
+        <button onclick="runExample2()">جرب الكود</button>
+        <div id="output2"></div>
+    </section>
+
+    <section>
+        <h2>إضافة عناصر إلى المصفوفة</h2>
+        <p>يمكنك إضافة عناصر إلى المصفوفة باستخدام طرق مثل <code>push</code> و <code>unshift</code> و <code>splice</code>. المثال التالي يوضح كيفية ذلك:</p>
+        <pre>
+let alphapet = ['c', 'd'];
+
+alphapet[alphapet.length] = 'e';
+alphapet.push('f', 'g');
+alphapet.unshift('a', 'b');
+alphapet.splice(2, 0, 'run', 'stop');
+console.log(alphapet);
+        </pre>
+        <button onclick="runExample3()">جرب الكود</button>
+        <div id="output3"></div>
+    </section>
+
+    <script>
+        function runExample1() {
+            let output = document.getElementById('output1');
+            let numb = [1, 2, 3, 4, 5];
+            const last = numb.pop();
+            const first = numb.shift();
+            const middle = numb.splice(1, 2);
+            output.innerHTML = `
+                <p>العنصر الأخير: ${last}</p>
+                <p>المصفوفة بعد الحذف الأخير: [${numb}]</p>
+                <p>العنصر الأول: ${first}</p>
+                <p>المصفوفة بعد الحذف الأول: [${numb}]</p>
+                <p>العناصر المحذوفة من الوسط: [${middle}]</p>
+                <p>المصفوفة النهائية: [${numb}]</p>
+            `;
+        }
+
+        function runExample2() {
+            let output = document.getElementById('output2');
+            let langs = ['c++', 'php', 'js'];
+            let clone = langs;
+            langs = [];
+            langs.length = 0;
+            output.innerHTML = `
+                <p>المصفوفة بعد التفريغ: [${langs}]</p>
+                <p>النسخة المستنسخة: [${clone}]</p>
+            `;
+        }
+
+        function runExample3() {
+            let output = document.getElementById('output3');
+            let alphapet = ['c', 'd'];
+
+            alphapet[alphapet.length] = 'e';
+            alphapet.push('f', 'g');
+            alphapet.unshift('a', 'b');
+            alphapet.splice(2, 0, 'run', 'stop');
+            output.innerHTML = `
+                <p>المصفوفة بعد الإضافات: [${alphapet}]</p>
+            `;
+        }
+    </script>
+</body>
+</html>
