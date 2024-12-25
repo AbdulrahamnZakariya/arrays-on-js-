@@ -157,5 +157,104 @@ console.log(alphapet);
             `;
         }
     </script>
+     <section>
+        <h2>البحث في المصفوفة</h2>
+        <p>يمكنك استخدام <code>includes</code> و <code>indexOf</code> للبحث عن عناصر في المصفوفة:</p>
+        <pre>
+let num0 = [120, 3, 5, 55, 43];
+console.log(num0.includes(3)); // تحقق إذا كان العنصر 3 موجودًا
+console.log(num0.includes(32)); // تحقق إذا كان العنصر 32 موجودًا
+console.log(num0.indexOf(5)); // إرجاع فهرس العنصر 5
+        </pre>
+        <button onclick="runExample1()">جرب الكود</button>
+        <div id="output1"></div>
+    </section>
+
+    <section>
+        <h2>استخدام التوابع للبحث المتقدم</h2>
+        <p>يمكنك استخدام <code>find</code> و <code>filter</code> و <code>findIndex</code>:</p>
+        <pre>
+let num0 = [120, 3, 5, 55, 43];
+let resu = num0.find(number4 => number4 > 10); // البحث عن أول عنصر أكبر من 10
+console.log(resu);
+
+let resuFiltered = num0.filter(number4 => number4 > 10); // إرجاع جميع العناصر الأكبر من 10
+console.log(resuFiltered);
+
+let index = num0.findIndex(number4 => number4 > 10); // إرجاع فهرس أول عنصر أكبر من 10
+console.log(index);
+        </pre>
+        <button onclick="runExample2()">جرب الكود</button>
+        <div id="output2"></div>
+    </section>
+
+    <section>
+        <h2>العبور على عناصر المصفوفة</h2>
+        <p>استخدام حلقة <code>for...of</code> أو <code>forEach</code> للمرور على العناصر:</p>
+        <pre>
+let langs = ['js', 'c#', 'ruby'];
+for (let lang of langs) {
+    console.log(lang);
+}
+langs.forEach((value, index) => console.log(`${index}: ${value}`));
+        </pre>
+        <button onclick="runExample3()">جرب الكود</button>
+        <div id="output3"></div>
+    </section>
+
+    <section>
+        <h2>ترتيب المصفوفة</h2>
+        <p>يمكنك ترتيب العناصر باستخدام <code>sort</code>:</p>
+        <pre>
+let constArray = [12, 1, 4, 2, 53];
+constArray.sort((a, b) => a - b); // الترتيب تصاعديًا
+console.log(constArray);
+        </pre>
+        <button onclick="runExample4()">جرب الكود</button>
+        <div id="output4"></div>
+    </section>
+
+    <script>
+        function runExample1() {
+            let output = document.getElementById('output1');
+            let num0 = [120, 3, 5, 55, 43];
+            output.innerHTML = `
+                <p>هل 3 موجود؟ ${num0.includes(3)}</p>
+                <p>هل 32 موجود؟ ${num0.includes(32)}</p>
+                <p>فهرس العنصر 5: ${num0.indexOf(5)}</p>
+            `;
+        }
+
+        function runExample2() {
+            let output = document.getElementById('output2');
+            let num0 = [120, 3, 5, 55, 43];
+            let resu = num0.find(number4 => number4 > 10);
+            let resuFiltered = num0.filter(number4 => number4 > 10);
+            let index = num0.findIndex(number4 => number4 > 10);
+            output.innerHTML = `
+                <p>أول عنصر أكبر من 10: ${resu}</p>
+                <p>العناصر الأكبر من 10: [${resuFiltered}]</p>
+                <p>فهرس أول عنصر أكبر من 10: ${index}</p>
+            `;
+        }
+
+        function runExample3() {
+            let output = document.getElementById('output3');
+            let langs = ['js', 'c#', 'ruby'];
+            let results = langs.map((value, index) => `${index}: ${value}`).join('<br>');
+            output.innerHTML = `
+                <p>العناصر: <br>${results}</p>
+            `;
+        }
+
+        function runExample4() {
+            let output = document.getElementById('output4');
+            let constArray = [12, 1, 4, 2, 53];
+            constArray.sort((a, b) => a - b);
+            output.innerHTML = `
+                <p>المصفوفة مرتبة تصاعديًا: [${constArray}]</p>
+            `;
+        }
+    </script>
 </body>
 </html>
